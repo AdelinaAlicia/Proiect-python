@@ -1,0 +1,103 @@
+# fara argumente
+find.py
+
+# cu 1 argument : path ul in care sa caute
+find.py ~/Desktop
+
+# cu 1 argument : path ul in care sa caute dar path ul e invalid
+find.py ~/Gresit
+
+
+# CU -NAME DAR FARA PATH
+# cu expresia -name dar fara argument
+find.py -name
+
+# cu expresia -name dar cu prea multe argumente
+find.py -name x y z
+
+# cu expresia -name cu un numar corect de argumente
+find.py -name *.owl
+
+# cu expresia -name cu un numar corect de argumente dar care nu face match(DUREAZA EXTREM DE MULT)
+find.py -name blavlalds
+
+
+# CU -NAME SI CU PATH
+# cu expresia -name dar fara argument
+find.py ~/Desktop -name
+
+# cu expresia -name dar cu prea multe argumente
+find.py ~/Desktop -name x y z
+
+# cu expresia -name cu un numar corect de argumente
+find.py ~/Desktop -name *.owl
+
+# cu expresia -name cu un numar corect de argumente dar cu path invalid
+find.py ~/Gresit -name *.owl
+
+# cu expresia -name cu un numar corect de argumente dar care nu face match
+find.py ~/Desktop -name blavlalds
+
+#TYPE
+# cu -Type si argument gresit
+find.py -type o
+
+#invalid predicate
+find.py ~/Desktop -f
+
+# cu -Type si argument f
+find.py ~/Desktop/ML -type f
+
+# cu -Type si argument d
+find.py ~/Desktop/ML -type d
+
+#TYPE + NAME
+#cu type si name
+find.py ~/Desktop/ML -type f -name *Store
+find.py ~/Desktop/ML -type f -name ML
+find.py ~/Desktop/ML -type d -name ML
+
+#INAME
+find.py ~/Desktop/ML -iname *store
+
+#type + iname
+find.py ~/Desktop/ML -type f -iname *store
+
+#type + name+ iname
+find.py ~/Desktop/ML -type f -iname *store -name .DS*
+
+
+PRINT
+# -print by default face acelasi lucru ca si cand nu ar fi setat
+find.py -print
+
+# -name + -print
+find.py -name *.owl -print
+
+# QUIT
+find.py  -quit
+
+#quit + print
+find.py -name *.owl -print -quit
+
+#quit+print+name
+find.py -name *.owl -quit -print
+
+#quit+name
+find.py -name *.owl -quit
+
+
+# VERSION
+find.py -version
+
+# HELP
+find.py -help
+
+#empty
+find.py ~/Desktop/ -empty
+
+#empty directory
+find.py ~/Desktop/ -empty -type d
+
+#empty directory +name
+ find.py ~/Desktop/ -empty -type d -name Mi*
